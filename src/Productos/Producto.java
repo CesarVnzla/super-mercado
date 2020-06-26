@@ -1,15 +1,19 @@
 package Productos;
 
-public class Producto  {
+import java.util.Comparator;
+
+//public class Producto  implements Comparator<Producto>{
+	
+public class Producto  implements Comparable<Producto>{
 
 	protected String nombre;
-	protected int precio;
+	protected Integer precio;
 
 	public Producto() {
 
 	}
 
-	public Producto(String nombre, int precio) {
+	public Producto(String nombre, Integer precio) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
@@ -23,11 +27,11 @@ public class Producto  {
 		this.nombre = nombre;
 	}
 
-	public int getPrecio() {
+	public Integer getPrecio() {
 		return precio;
 	}
 
-	public void setPrecio(int precio) {
+	public void setPrecio(Integer precio) {
 		this.precio = precio;
 	}
 
@@ -36,4 +40,17 @@ public class Producto  {
 		
 		return "Nombre: " + nombre;
 	}
+
+	@Override
+	public int compareTo(Producto o) {
+		
+		return this.getPrecio().compareTo(o.getPrecio());
+	}
+
+	/*@Override
+	public int compare(Producto o1, Producto o2) {
+		
+		return o1.getPrecio().compareTo(o2.getPrecio());
+	}*/
+
 }

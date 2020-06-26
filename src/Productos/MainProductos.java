@@ -9,7 +9,6 @@ import java.util.stream.Collectors;
  * @author CesarVnzla
  *
  */
-
 public class MainProductos {
 
 	public static void main(String[] args) {
@@ -17,24 +16,30 @@ public class MainProductos {
 		List<Producto> listarProductos = new ArrayList<>();
 		
 		llenarListaDeProductos(listarProductos);
-	
-		List<Producto> listaMenorMayor = listarProductos.stream()
+		
+		/*List<Producto> listaMenorMayor = listarProductos.stream()
 				.sorted(Comparator.comparing(Producto::getPrecio))
 				.map(p -> {
 				Producto producto = new Producto();
 				producto.setNombre(p.getNombre());
 				return producto;
 				})
-				.collect(Collectors.toList());
-
+				.collect(Collectors.toList());*/
+		
 		listarProductos.stream()
 			      .map(Producto::toString)
 			      .forEach(System.out::println);
 		
+		// Ordenar Usando interfaz Comparator
+		//listarProductos.sort(new Producto());
+		
+		//Ordenerda usando interfaz Comparable
+		listarProductos.sort(Producto::compareTo);
+		
 		System.out.println("=============================");
 		
-	    System.out.println("Producto mas caro: " + listaMenorMayor.get(listaMenorMayor.size()-1));
-	    System.out.println("Producto mas barato: " + listaMenorMayor.get(0));
+	    System.out.println("Producto mas caro: " + listarProductos.get(listarProductos.size()-1).getNombre());
+	    System.out.println("Producto mas barato: " + listarProductos.get(0).getNombre());
 	}
 
 	private static void llenarListaDeProductos(List<Producto> productos) {
