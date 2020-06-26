@@ -42,7 +42,7 @@ public class MainProductos {
 		Producto coca1 = new ProductoBebida("Coca-Cola Zero", 20, 1.5);
 		Producto coca2 = new ProductoBebida("Coca-Cola", 18, 1.5);
 		Producto Sedal = new ProductoShampoo("Shampoo Sedal", 19, 500);
-		Producto frutilla= new ProductosFrutas("Frutillas", 64, "kilo");
+		Producto frutilla= new ProductoFruta("Frutillas", 64, "kilo");
 		
 		productos.add(coca1);
 		productos.add(coca2);

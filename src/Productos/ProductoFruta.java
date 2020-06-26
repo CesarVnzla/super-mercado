@@ -1,14 +1,14 @@
 package Productos;
 
-public class ProductosFrutas extends Producto {
+public class ProductoFruta extends Producto {
 
 	private String unidadDeVenta;
 
-	public ProductosFrutas() {
+	public ProductoFruta() {
 
 	}
 
-	public ProductosFrutas(String nombre, int precio, String unidadDeVenta) {
+	public ProductoFruta(String nombre, int precio, String unidadDeVenta) {
 		super(nombre, precio);
 		this.unidadDeVenta = unidadDeVenta;
 
